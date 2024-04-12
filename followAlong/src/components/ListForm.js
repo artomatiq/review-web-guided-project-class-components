@@ -1,23 +1,31 @@
 import React from "react";
 
 class ListForm extends React.Component {
-  // Constructor with state
+  constructor(props) {
+    super(props);
+
+    this.handleChanges = this.handleChanges.bind(this);
+    this.submit = this.submit.bind(this);
+  }
 
   handleChanges = e => {
-    // update state with each keystroke
+    this.props.setState
   };
 
-  // class property to submit form
+  subimt = () => {
+    e.preventDefault();
+  }
 
   render() {
     return (
       <form>
-        {/* This is an uncontrolled component 😬 We want it to be controlled by state */}
-        <input type="text" name="item" />
-        <button>Add</button>
+        <input type="text" name="item" onChange={this.handleChanges}/>
+        <button onClick={this.submit}>Add</button>
       </form>
     );
   }
 }
 
 export default ListForm;
+
+
